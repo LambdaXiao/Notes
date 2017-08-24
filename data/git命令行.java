@@ -1,9 +1,9 @@
 初始化git仓库
+
 git init 
-
 ///输出：Initialized empty Git repository in /home/jin/Documents/gitLearn/.git/
-
 ///则于指定位置初始化了一个空仓库，会自动创建.git文件。文件中.gitnore则用来排除指定文件夹/文件提交到变化中
+
 
 添加变化
 git add . //提交所有新增文件和变化文件，不包括被删除文件
