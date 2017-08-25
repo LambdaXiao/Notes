@@ -1,0 +1,19 @@
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_refresh_widget"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</android.support.v4.widget.SwipeRefreshLayout>
+
+setOnRefreshListener(OnRefreshListener):添加下拉刷新监听器
+setRefreshing(boolean):显示或者隐藏刷新进度条
+isRefreshing():检查是否处于刷新状态
+setColorSchemeResources():设置进度条的颜色主题，最多设置四种，以前的setColorScheme()方法已经弃用了。
+
+ mSwipeRefreshWidget = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh_widget);
+        mSwipeRefreshWidget.setColorSchemeResources(R.color.colorPrimary,
+                R.color.colorAccent, R.color.green,
+                R.color.yellow);
+        mSwipeRefreshWidget.setOnRefreshListener(this);
