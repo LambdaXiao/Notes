@@ -1,22 +1,22 @@
-ÈçºÎÌí¼Ó?
-I. ÔÚÄãµÄ build.grade ÎÄ¼şÀïÌí¼Ó×îĞÂ°æ±¾µÄ appcompat ¿â¡£
+å¦‚ä½•æ·»åŠ ?
+I. åœ¨ä½ çš„ build.grade æ–‡ä»¶é‡Œæ·»åŠ æœ€æ–°ç‰ˆæœ¬çš„ appcompat åº“ã€‚
 dependencies {  
     compile 'com.android.support:appcompat-v7:X.X.X'
     // where X.X.X version
 }
-II. Ê¹ÄãµÄ activity ¼Ì³Ğ×Ô android.support.v7.app.AppCompatActivity.
+II. ä½¿ä½ çš„ activity ç»§æ‰¿è‡ª android.support.v7.app.AppCompatActivity.
 public class MyActivity extends AppCompatActivity {  
    ...
 }
-III. ÔÚ layout.xml ÎÄ¼şÄÚÉùÃ÷ÄãµÄ Toolbar¡£
+III. åœ¨ layout.xml æ–‡ä»¶å†…å£°æ˜ä½ çš„ Toolbarã€‚
 <android.support.v7.widget.Toolbar  
     android:layout_width="fill_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="?colorPrimary"
     app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
-ÈçºÎÉèÖÃÑùÊ½?
+å¦‚ä½•è®¾ç½®æ ·å¼?
  
-I. ÔÚÄãµÄ style.xml ÎÄ¼şÀïÉùÃ÷×Ô¶¨ÒåµÄÑùÊ½¡£
+I. åœ¨ä½ çš„ style.xml æ–‡ä»¶é‡Œå£°æ˜è‡ªå®šä¹‰çš„æ ·å¼ã€‚
 <style name="ToolbarTextAppearance">  
     <item name="android:fontFamily">sans-serif-condensed</item>
     <item name="android:textColor">@android:color/white</item>
@@ -39,7 +39,7 @@ I. ÔÚÄãµÄ style.xml ÎÄ¼şÀïÉùÃ÷×Ô¶¨ÒåµÄÑùÊ½¡£
     <item name="android:background">?colorPrimary</item>
     <item name="android:elevation">4dp</item>
 </style>  
-II. Ó¦ÓÃÑùÊ½µ½ÄãµÄ Toolbar µÄ titleTextAppearance ºÍ subtitleTextAppearance ÊôĞÔ¡£
+II. åº”ç”¨æ ·å¼åˆ°ä½ çš„ Toolbar çš„ titleTextAppearance å’Œ subtitleTextAppearance å±æ€§ã€‚
 <android.support.v7.widget.Toolbar  
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
@@ -49,9 +49,9 @@ II. Ó¦ÓÃÑùÊ½µ½ÄãµÄ Toolbar µÄ titleTextAppearance ºÍ subtitleTextAppearance ÊôĞÔ
     app:titleTextAppearance="@style/ToolbarTextAppearance.Title"
     app:subtitleTextAppearance="@style/ToolbarTextAppearance.Subtitle"
     style="@style/MyToolbar" />
-Toolbar ²Ëµ¥Í¼±ê
+Toolbar èœå•å›¾æ ‡
 
-I. ´´½¨Ã¿Ò»¸ö Action Ïî¡£
+I. åˆ›å»ºæ¯ä¸€ä¸ª Action é¡¹ã€‚
 <menu xmlns:android="http://schemas.android.com/apk/res/android"  
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -69,14 +69,14 @@ I. ´´½¨Ã¿Ò»¸ö Action Ïî¡£
         android:title="@string/action_settings"
         app:showAsAction="never"/>
 </menu>  
-II. Í¨¹ı inflateMenu ·½·¨Éú³ÉÄãµÄ²Ëµ¥¡£
+II. é€šè¿‡ inflateMenu æ–¹æ³•ç”Ÿæˆä½ çš„èœå•ã€‚
 Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);  
 toolbar.inflateMenu(R.menu.main);  
-II. Ê¹ÄãµÄ activity ÊµÏÖ Toolbar.OnMenuItemClickListener.
+II. ä½¿ä½ çš„ activity å®ç° Toolbar.OnMenuItemClickListener.
 public class MyActivity extends AppCompatActivity implements Toolbar.OnMenuItemClickListener {  
-III. ÔÚÄãµÄ ToolbarÉÏÉèÖÃÊµÏÖÁË listener µÄ ActivityµÄÒıÓÃ¡£
+III. åœ¨ä½ çš„ Toolbarä¸Šè®¾ç½®å®ç°äº† listener çš„ Activityçš„å¼•ç”¨ã€‚
 toolbar.setOnMenuItemClickListener(this);  
-IV. ÔÚ onMenuItemClick ·½·¨ÄÚÊµÏÖÄãµÄ actions¡£
+IV. åœ¨ onMenuItemClick æ–¹æ³•å†…å®ç°ä½ çš„ actionsã€‚
 @Override
 public boolean onMenuItemClick(MenuItem item) {  
     switch (item.getItemId()) {
@@ -91,16 +91,16 @@ public boolean onMenuItemClick(MenuItem item) {
 
     return true;
 }
-Toolbar µÄµ¼º½·µ»ØÍ¼±ê
+Toolbar çš„å¯¼èˆªè¿”å›å›¾æ ‡
  
-I. ÔÚÄãµÄ styles.xml ÎÄ¼şÄÚ¶¨Òå×Ô¶¨ÒåÑùÊ½¡£
+I. åœ¨ä½ çš„ styles.xml æ–‡ä»¶å†…å®šä¹‰è‡ªå®šä¹‰æ ·å¼ã€‚
 <style name="MyToolbar">  
     <item name="theme">@style/ThemeOverlay.AppCompat.Dark</item>
     <item name="navigationIcon">@drawable/abc_ic_ab_back_mtrl_am_alpha</item>
     <item name="android:background">?colorPrimary</item>
     <item name="android:elevation">4dp</item>
 </style>  
-II. Í¨¹ı style ÊôĞÔÓ¦ÓÃÕâ¸öÑùÊ½µ½ÄãµÄ Toolbar¡£
+II. é€šè¿‡ style å±æ€§åº”ç”¨è¿™ä¸ªæ ·å¼åˆ°ä½ çš„ Toolbarã€‚
 <android.support.v7.widget.Toolbar  
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
@@ -108,16 +108,16 @@ II. Í¨¹ı style ÊôĞÔÓ¦ÓÃÕâ¸öÑùÊ½µ½ÄãµÄ Toolbar¡£
     app:title="Toolbar"
     app:subtitle="Toolbars are amazing"
     style="@style/MyToolbar" />
-III. ÉèÖÃµ¼º½·µ»Ø¶¯×÷µÄ¼àÌıÆ÷¡£
+III. è®¾ç½®å¯¼èˆªè¿”å›åŠ¨ä½œçš„ç›‘å¬å™¨ã€‚
 toolbar.setNavigationOnClickListener(new View.OnClickListener() {  
     @Override
     public void onClick(View v) {
         onBackPressed();
     }
 });
-Toolbar µÄÁô°×
+Toolbar çš„ç•™ç™½
  
-I. ÔÚÄãµÄ styles.xml ÎÄ¼şÄÚ¶¨Òå×Ô¶¨ÒåÑùÊ½¡£
+I. åœ¨ä½ çš„ styles.xml æ–‡ä»¶å†…å®šä¹‰è‡ªå®šä¹‰æ ·å¼ã€‚
 <style name="MyToolbar">  
     <item name="theme">@style/ThemeOverlay.AppCompat.Dark</item>
     <item name="navigationIcon">@drawable/abc_ic_ab_back_mtrl_am_alpha</item>
@@ -125,7 +125,7 @@ I. ÔÚÄãµÄ styles.xml ÎÄ¼şÄÚ¶¨Òå×Ô¶¨ÒåÑùÊ½¡£
     <item name="android:background">?colorPrimary</item>
     <item name="android:elevation">4dp</item>
 </style>  
-II. Í¨¹ı style ÊôĞÔÓ¦ÓÃÕâ¸öÑùÊ½µ½ÄãµÄ Toolbar¡£
+II. é€šè¿‡ style å±æ€§åº”ç”¨è¿™ä¸ªæ ·å¼åˆ°ä½ çš„ Toolbarã€‚
 <android.support.v7.widget.Toolbar  
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
@@ -133,3 +133,16 @@ II. Í¨¹ı style ÊôĞÔÓ¦ÓÃÕâ¸öÑùÊ½µ½ÄãµÄ Toolbar¡£
     app:title="Toolbar"
     app:subtitle="Toolbars are really cool"
     style="@style/MyToolbar" />
+
+éœ€è¦ç”¨åˆ°ToolBarçš„Titleå±…ä¸­ï¼Œ
+ç½‘ä¸Šçš„æµè¡Œçš„è§£å†³åŠæ³•æ˜¯åœ¨ToolBaré‡Œé¢åµŒå¥—ä¸€ä¸ªTextView
+é‚£ä¹ˆæœ‰æ²¡æœ‰åŠæ³•èƒ½ä½¿å¾—å®ƒçœŸæ­£çš„å±…ä¸­å‘¢ï¼Ÿ
+æ–¹æ³•å¾ˆç®€å•ï¼šåªéœ€è¦åœ¨ToolBarçš„å±æ€§è®¾ç½®ä¸­æ·»åŠ å¦‚ä¸‹è¯­å¥ï¼š
+app:contentInsetStart="0dp"
+
+
+è¦æƒ³è®©Toolbaræœ¬èº«çš„inflateMenuç”Ÿæ•ˆï¼Œåˆ™å¿…é¡»åˆ å»è¿™ä¸¤å¥ä»£ç ï¼ï¼ï¼
+setSupportActionBar(toolbar);
+getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+android:orderInCategory="90"//æ’åº
