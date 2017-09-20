@@ -1,6 +1,5 @@
 初始化git仓库
 
-测试
 git init 
 ///输出：Initialized empty Git repository in /home/jin/Documents/gitLearn/.git/
 ///则于指定位置初始化了一个空仓库，会自动创建.git文件。文件中.gitnore则用来排除指定文件夹/文件提交到变化中
@@ -24,10 +23,10 @@ git add a.txt //提交a.txt
 git commit -m 'commit备注'
 //git commit命令即为一次性把暂存区的修改往当前分支(master/branch)提交，备注一定要写，不然commit会被拒绝
 
-git状态
+git工作区状态
 git status //git add,git commit这些状态使用git status命令即可查看状态
 
-查看日志
+查看历史提交日志
 git log //显示每一次提交的信息：作者、日期、hash、commit信息
 
 git log --pretty=oneline //单行显示提交信息：hash、commit信息
@@ -35,18 +34,21 @@ git log --pretty=oneline //单行显示提交信息：hash、commit信息
 git reflog //提交信息：hash、commit信息
 
 版本控制
-git reset --hard HEAD^ //仓库文件回退到上一commit版本
+git reset --hard HEAD^ //暂存区版本回退到上一commit版本
 
-git reset --hard 35f69c //版本回滚到hash值35f69c开头的commit版本
+git reset --hard 35f69c //暂存区版本回退到hash值35f69c开头的commit版本
 
 git reset HEAD a.txt //把暂存区中a.txt的修改撤销掉，放回工作区
+
+撤销修改：git checkout -- file 或 git checkout -- .
+        //本地版本回退到暂存区版本
 
 查看代码修改的内容
 git diff  <file>
 如果该文件已暂存，那么应该使用
 git diff –cached<file>
 
-远程分支
+关联远程分支
 git remote add origin git@github.com:Wbiokr/chatApp.git
 //关联远程库chatApp.git
 
@@ -60,10 +62,10 @@ git pull --rebase origin master//(不加这句可能报错出现错误的主要�
 　　可以通过该命令进行代码合并
 或
 git pull origin master
-//从远程分支获取最新版本并merge到本地
+//从远程分支获取最新版本并merge到本地分支
 
 git fetch origin master
-//从远程分支获取最新版本但不会merge
+//把所有远程分支获取最新版本到所有本地的origin/分支，但不会merge到工作区的分支
 
 
 git 命令合并分支代码
@@ -107,11 +109,10 @@ git push
 git将分支合并到分支，将master合并到分支的操作步骤是一样的；
 
 切换分支：git checkout name
-撤销修改：git checkout -- file
 删除文件：git rm file
 查看状态：git status
 添加记录：git add file 或 git add .
-添加描述：git commit -m "miao shu nei rong"
+提交记录：git commit -m "miao shu nei rong"
 同步数据：git pull
 提交数据：git push origin name
 分支操作
