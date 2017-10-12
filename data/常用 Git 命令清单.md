@@ -1,251 +1,251 @@
-��ÿ��ʹ�� Git �����Ǻܶ�����ǲ�ס��
-һ����˵���ճ�ʹ��ֻҪ��ס��ͼ6������Ϳ����ˡ���������ʹ�ã�����Ҫ��ס60��100�����
+我每天使用 Git ，但是很多命令记不住。
+一般来说，日常使用只要记住下图6个命令，就可以了。但是熟练使用，恐怕要记住60～100个命令。
 
-![image](https://github.com/x1971481259/Notes/screenshot/gitflows.png)
+![Image text](https://github.com/x1971481259/Notes/screenshot/gitflows.png)
 
-�������������ĳ��� Git �����嵥������ר�����ʵ��������¡�
+下面是我整理的常用 Git 命令清单。几个专用名词的译名如下。
 
-Workspace��������
-Index / Stage���ݴ���
-Repository���ֿ������򱾵زֿ⣩
-Remote��Զ�ֿ̲�
+Workspace：工作区
+Index / Stage：暂存区
+Repository：仓库区（或本地仓库）
+Remote：远程仓库
 
-һ���½������
+一、新建代码库
 
-# �ڵ�ǰĿ¼�½�һ��Git�����
+# 在当前目录新建一个Git代码库
 $ git init
 
-# �½�һ��Ŀ¼�������ʼ��ΪGit�����
+# 新建一个目录，将其初始化为Git代码库
 $ git init [project-name]
 
-# ����һ����Ŀ����������������ʷ
+# 下载一个项目和它的整个代码历史
 $ git clone [url]
 
-��������
+二、配置
 
-Git�������ļ�Ϊ.gitconfig�����������û���Ŀ¼�£�ȫ�����ã���Ҳ��������ĿĿ¼�£���Ŀ���ã���
+Git的设置文件为.gitconfig，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。
 
-# ��ʾ��ǰ��Git����
+# 显示当前的Git配置
 $ git config --list
 
-# �༭Git�����ļ�
+# 编辑Git配置文件
 $ git config -e [--global]
 
-# �����ύ����ʱ���û���Ϣ
+# 设置提交代码时的用户信息
 $ git config [--global] user.name "[name]"
 $ git config [--global] user.email "[email address]"
 
-��������/ɾ���ļ�
+三、增加/删除文件
 
 
-# ����ָ���ļ����ݴ���
+# 添加指定文件到暂存区
 $ git add [file1] [file2] ...
 
-# ����ָ��Ŀ¼���ݴ�����������Ŀ¼
+# 添加指定目录到暂存区，包括子目录
 $ git add [dir]
 
-# ���ӵ�ǰĿ¼�������ļ����ݴ���
+# 添加当前目录的所有文件到暂存区
 $ git add .
 
-# ɾ���������ļ������ҽ����ɾ�������ݴ���
+# 删除工作区文件，并且将这次删除放入暂存区
 $ git rm [file1] [file2] ...
 
-# ֹͣ׷��ָ���ļ��������ļ��ᱣ���ڹ�����
+# 停止追踪指定文件，但该文件会保留在工作区
 $ git rm --cached [file]
 
-# �����ļ������ҽ�������������ݴ���
+# 改名文件，并且将这个改名放入暂存区
 $ git mv [file-original] [file-renamed]
 
-�ġ������ύ
+四、代码提交
 
-# �ύ�ݴ������ֿ���
+# 提交暂存区到仓库区
 $ git commit -m [message]
 
-# �ύ�ݴ�����ָ���ļ����ֿ���
+# 提交暂存区的指定文件到仓库区
 $ git commit [file1] [file2] ... -m [message]
 
-# �ύ���������ϴ�commit֮��ı仯��ֱ�ӵ��ֿ���
+# 提交工作区自上次commit之后的变化，直接到仓库区
 $ git commit -a
 
-# �ύʱ��ʾ����diff��Ϣ
+# 提交时显示所有diff信息
 $ git commit -v
 
-# ʹ��һ���µ�commit�������һ���ύ
-# �������û���κ��±仯����������д��һ��commit���ύ��Ϣ
+# 使用一次新的commit，替代上一次提交
+# 如果代码没有任何新变化，则用来改写上一次commit的提交信息
 $ git commit --amend -m [message]
 
-# ������һ��commit��������ָ���ļ����±仯
+# 重做上一次commit，并包括指定文件的新变化
 $ git commit --amend [file1] [file2] ...
 
-�塢��֧
+五、分支
 
-# �г����б��ط�֧
+# 列出所有本地分支
 $ git branch
 
-# �г�����Զ�̷�֧
+# 列出所有远程分支
 $ git branch -r
 
-# �г����б��ط�֧��Զ�̷�֧
+# 列出所有本地分支和远程分支
 $ git branch -a
 
-# �½�һ����֧������Ȼͣ���ڵ�ǰ��֧
+# 新建一个分支，但依然停留在当前分支
 $ git branch [branch-name]
 
-# �½�һ����֧�����л����÷�֧
+# 新建一个分支，并切换到该分支
 $ git checkout -b [branch]
 
-# �½�һ����֧��ָ��ָ��commit
+# 新建一个分支，指向指定commit
 $ git branch [branch] [commit]
 
-# �½�һ����֧����ָ����Զ�̷�֧����׷�ٹ�ϵ
+# 新建一个分支，与指定的远程分支建立追踪关系
 $ git branch --track [branch] [remote-branch]
 
-# �л���ָ����֧�������¹�����
+# 切换到指定分支，并更新工作区
 $ git checkout [branch-name]
 
-# ����׷�ٹ�ϵ�������з�֧��ָ����Զ�̷�֧֮��
+# 建立追踪关系，在现有分支与指定的远程分支之间
 $ git branch --set-upstream [branch] [remote-branch]
 
-# �ϲ�ָ����֧����ǰ��֧
+# 合并指定分支到当前分支
 $ git merge [branch]
 
-# ѡ��һ��commit���ϲ�����ǰ��֧
+# 选择一个commit，合并进当前分支
 $ git cherry-pick [commit]
 
-# ɾ����֧
+# 删除分支
 $ git branch -d [branch-name]
 
-# ɾ��Զ�̷�֧
+# 删除远程分支
 $ git push origin --delete [branch-name]
 $ git branch -dr [remote/branch]
 
-������ǩ
+六、标签
 
-# �г�����tag
+# 列出所有tag
 $ git tag
 
-# �½�һ��tag�ڵ�ǰcommit
+# 新建一个tag在当前commit
 $ git tag [tag]
 
-# �½�һ��tag��ָ��commit
+# 新建一个tag在指定commit
 $ git tag [tag] [commit]
 
-# �鿴tag��Ϣ
+# 查看tag信息
 $ git show [tag]
 
-# �ύָ��tag
+# 提交指定tag
 $ git push [remote] [tag]
 
-# �ύ����tag
+# 提交所有tag
 $ git push [remote] --tags
 
-# �½�һ����֧��ָ��ĳ��tag
+# 新建一个分支，指向某个tag
 $ git checkout -b [branch] [tag]
 
-�ߡ��鿴��Ϣ
+七、查看信息
 
 
-# ��ʾ�б�����ļ�
+# 显示有变更的文件
 $ git status
 
-# ��ʾ��ǰ��֧�İ汾��ʷ
+# 显示当前分支的版本历史
 $ git log
 
-# ��ʾcommit��ʷ���Լ�ÿ��commit����������ļ�
+# 显示commit历史，以及每次commit发生变更的文件
 $ git log --stat
 
-# ��ʾĳ���ļ��İ汾��ʷ�������ļ�����
+# 显示某个文件的版本历史，包括文件改名
 $ git log --follow [file]
 $ git whatchanged [file]
 
-# ��ʾָ���ļ���ص�ÿһ��diff
+# 显示指定文件相关的每一次diff
 $ git log -p [file]
 
-# ��ʾָ���ļ���ʲô����ʲôʱ���޸Ĺ�
+# 显示指定文件是什么人在什么时间修改过
 $ git blame [file]
 
-# ��ʾ�ݴ����͹������Ĳ���
+# 显示暂存区和工作区的差异
 $ git diff
 
-# ��ʾ�ݴ�������һ��commit�Ĳ���
+# 显示暂存区和上一个commit的差异
 $ git diff --cached [file]
 
-# ��ʾ�������뵱ǰ��֧����commit֮��Ĳ���
+# 显示工作区与当前分支最新commit之间的差异
 $ git diff HEAD
 
-# ��ʾ�����ύ֮��Ĳ���
+# 显示两次提交之间的差异
 $ git diff [first-branch]...[second-branch]
 
-# ��ʾĳ���ύ��Ԫ���ݺ����ݱ仯
+# 显示某次提交的元数据和内容变化
 $ git show [commit]
 
-# ��ʾĳ���ύ�����仯���ļ�
+# 显示某次提交发生变化的文件
 $ git show --name-only [commit]
 
-# ��ʾĳ���ύʱ��ĳ���ļ�������
+# 显示某次提交时，某个文件的内容
 $ git show [commit]:[filename]
 
-# ��ʾ��ǰ��֧����������ύ
+# 显示当前分支的最近几次提交
 $ git reflog
 
-�ˡ�Զ��ͬ��
+八、远程同步
 
-# ����Զ�ֿ̲�����б䶯
+# 下载远程仓库的所有变动
 $ git fetch [remote]
 
-# ��ʾ����Զ�ֿ̲�
+# 显示所有远程仓库
 $ git remote -v
 
-# ��ʾĳ��Զ�ֿ̲����Ϣ
+# 显示某个远程仓库的信息
 $ git remote show [remote]
 
-# ����һ���µ�Զ�ֿ̲⣬������
+# 增加一个新的远程仓库，并命名
 $ git remote add [shortname] [url]
 
-# ȡ��Զ�ֿ̲�ı仯�����뱾�ط�֧�ϲ�
+# 取回远程仓库的变化，并与本地分支合并
 $ git pull [remote] [branch]
 
-# �ϴ�����ָ����֧��Զ�ֿ̲�
+# 上传本地指定分支到远程仓库
 $ git push [remote] [branch]
 
-# ǿ�����͵�ǰ��֧��Զ�ֿ̲⣬��ʹ�г�ͻ
+# 强行推送当前分支到远程仓库，即使有冲突
 $ git push [remote] --force
 
-# �������з�֧��Զ�ֿ̲�
+# 推送所有分支到远程仓库
 $ git push [remote] --all
 
-�š�����
+九、撤销
 
 
-# �ָ��ݴ�����ָ���ļ���������
+# 恢复暂存区的指定文件到工作区
 $ git checkout [file]
 
-# �ָ�ĳ��commit��ָ���ļ���������
+# 恢复某个commit的指定文件到工作区
 $ git checkout [commit] [file]
 
-# �ָ���һ��commit�������ļ���������
+# 恢复上一个commit的所有文件到工作区
 $ git checkout .
 
-# �����ݴ�����ָ���ļ�������һ��commit����һ�£�������������
+# 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变
 $ git reset [file]
 
-# �����ݴ����빤����������һ��commit����һ��
+# 重置暂存区与工作区，与上一次commit保持一致
 $ git reset --hard
 
-# ���õ�ǰ��֧��ָ��Ϊָ��commit��ͬʱ�����ݴ�����������������
+# 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变
 $ git reset [commit]
 
-# ���õ�ǰ��֧��HEADΪָ��commit��ͬʱ�����ݴ����͹���������ָ��commitһ��
+# 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致
 $ git reset --hard [commit]
 
-# ���õ�ǰHEADΪָ��commit���������ݴ����͹���������
+# 重置当前HEAD为指定commit，但保持暂存区和工作区不变
 $ git reset --keep [commit]
 
-# �½�һ��commit����������ָ��commit
-# ���ߵ����б仯������ǰ�ߵ���������Ӧ�õ���ǰ��֧
+# 新建一个commit，用来撤销指定commit
+# 后者的所有变化都将被前者抵消，并且应用到当前分支
 $ git revert [commit]
 
-ʮ������
+十、其他
 
-# ����һ���ɹ�������ѹ����
+# 生成一个可供发布的压缩包
 $ git archive
