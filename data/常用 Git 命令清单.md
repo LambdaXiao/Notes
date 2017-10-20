@@ -56,6 +56,8 @@ $ git add [dir]
 
 $ git add .
 
+$ git add -u //提交被修改和被删除文件，不包括新文件
+
 #删除工作区文件，并且将这次删除放入暂存区
 
 $ git rm [file1] [file2] ...
@@ -205,6 +207,10 @@ $ git whatchanged [file]
 
 $ git log -p [file]
 
+$ git log --pretty=oneline //单行显示提交信息：hash、commit信息
+
+$ git reflog //提交信息：hash、commit信息
+
 #显示指定文件是什么人在什么时间修改过
 
 $ git blame [file]
@@ -258,6 +264,8 @@ $ git remote show [remote]
 #增加一个新的远程仓库，并命名
 
 $ git remote add [shortname] [url]
+
+$ git remote add origin git@github.com:Wbiokr/chatApp.git
 
 #取回远程仓库的变化，并与本地分支合并
 
