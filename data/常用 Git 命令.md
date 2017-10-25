@@ -148,6 +148,14 @@ $ git cherry-pick [commit]
 
 $ git branch -d [branch-name]
 
+#强制删除分支，尤其适用于内容有了新修改单没合并的情况
+
+$ git branch -D [branch-name]
+
+#变基操作
+
+$ git rebase 目标分支
+
 #删除远程分支
 
 $ git push origin --delete [branch-name]
@@ -247,6 +255,10 @@ $ git show [commit]:[filename]
 
 $ git reflog
 
+#显示分支合并图
+
+$ git  log --graph
+
 # 八、远程同步
 
 #下载远程仓库的所有变动
@@ -324,8 +336,28 @@ $ git reset --keep [commit]
 
 $ git revert [commit]
 
-# 十、其他
+# 十、修改存储
 
-#生成一个可供发布的压缩包
+#把当前分支的工作现场存储起来，等以后恢复现场后继续工作，适用于还没有添加到暂存区的分支代码
 
-$ git archive
+$ git stash
+
+#查看存储的工作现场记录列表
+
+$ git stash list
+
+#恢复最近stash的工作现场，但是恢复后，stash内容并不删除。后面可以加stash_id 或stash@{num}
+
+$ git stash apply
+
+#删除最近stash的工作现场，后面可以加stash_id 或stash@{num}
+
+$ git stash drop
+
+#相当于上面两条命令，后面可以加stash_id 或stash@{num}
+
+$ git stash pop
+
+#清空所有暂存区的stash记录
+
+$ git stash clear
