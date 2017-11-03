@@ -361,3 +361,10 @@ $ git stash pop
 #清空所有暂存区的stash记录
 
 $ git stash clear
+
+# 使用gitlab,安装git后获取公钥key
+$ ssh-keygen
+$ cat ~/.ssh/
+$ cat ~/.ssh/id_rsa.pub
+
+另外在C:\Windows\System32\drivers\etc\hosts 添加代码远程服务器地址
