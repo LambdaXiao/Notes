@@ -433,3 +433,23 @@ $ cat ~/.ssh/id_rsa.pub
   ●  编辑模式 
 
   当我们处在编辑模式的情况下，和我们在Windows编辑器的使用相似。
+  
+ # git bash中的快捷键
+ 
+ tab 自动补全，连按两次会将所有匹配内容显示出来
+
+ history 查看操作历史
+
+ pwd (Print Working Directory) 查看当前目录
+ 
+ cd (Change Directory) 切换目录，如 cd /etc
+
+ls (List) 查看当前目录下内容，如 ls -al
+
+mkdir (Make Directory) 创建目录，如 mkdir blog
+
+touch 创建文件，如 touch index.html
+
+cat 查看文件全部内容，如 cat index.html
+
+Ctrl + l：清屏
