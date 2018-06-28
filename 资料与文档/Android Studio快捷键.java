@@ -52,6 +52,13 @@ Ctrl+F7：可以查询当前元素在当前文件中的引用，然后按F3可�
 
 Ctrl+J:自动代码
 
+清理无用资源：
+项目-》右键 -》选中Analyze-》Run Inspection by Name -》输入 Unused Resuroces
+以及Refactor->Remove Unused Resources
+快速删除无用的import包
+code->Optimize Imports...
+
+
 刚开始使用Android Studio时，在创建一个javabean时，很习惯的在JavaBean类中，右键去找生成get，set等选项。但是很遗憾，找不到。
 那这边如何快速的set，get或者生成构造函数，生成toString方法。
 有两种方式：
