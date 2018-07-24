@@ -21,6 +21,8 @@ ALT-SHIFT-UP 和 ALT-SHIFT-DOWN则可以让你当前所在行上移或者下移�
 
 Ctrl＋Shift＋Backspace 可以跳转到上次编辑的地方
 
+Ctrl+Alt+Left/Right:返回至上次浏览的位置
+
 Ctrl＋E，可以显示最近编辑的文件列表
 
 Ctrl+R:替换文本
@@ -40,11 +42,7 @@ Ctrl+Shift+Alt+N:查找类中的方法和变量
 
 Ctrl+Shift+C:对比最近修改的代码
 
-Ctrl+Alt+Left/Right:返回至上次浏览的位置
-
 Ctrl+[或]：可以调到大括号的开头结尾
-
-Ctrl+Shift+Backspace:可以跳转到上次编辑的地方
 
 Ctrl+ALt+V:可以引入变量。例如把括号内的sql赋成一个变量
 
