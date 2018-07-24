@@ -9,7 +9,10 @@ Java集合和数组的区别：
 2.数组元素即可以是基本类型的值，也可以是对象。集合里只能保存对象（实际上只是保存对象的引用变量），基本数据类型的变量要转换成对应的包装类才能放入集合类中。
 
 
+![Image text](https://github.com/x1971481259/Notes/raw/master/screenshot/collection.png)
 
+
+![Image text](https://github.com/x1971481259/Notes/raw/master/screenshot/map.png)
 
 
 
