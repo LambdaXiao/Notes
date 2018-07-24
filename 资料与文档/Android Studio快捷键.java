@@ -21,6 +21,8 @@ ALT-SHIFT-UP 和 ALT-SHIFT-DOWN则可以让你当前所在行上移或者下移�
 
 Ctrl＋Shift＋Backspace 可以跳转到上次编辑的地方
 
+Ctrl+Alt+Left/Right:返回至上次浏览的位置
+
 Ctrl＋E，可以显示最近编辑的文件列表
 
 Ctrl+R:替换文本
@@ -40,17 +42,20 @@ Ctrl+Shift+Alt+N:查找类中的方法和变量
 
 Ctrl+Shift+C:对比最近修改的代码
 
-Ctrl+Alt+Left/Right:返回至上次浏览的位置
-
 Ctrl+[或]：可以调到大括号的开头结尾
-
-Ctrl+Shift+Backspace:可以跳转到上次编辑的地方
 
 Ctrl+ALt+V:可以引入变量。例如把括号内的sql赋成一个变量
 
 Ctrl+F7：可以查询当前元素在当前文件中的引用，然后按F3可以选择
 
 Ctrl+J:自动代码
+
+清理无用资源：
+项目-》右键 -》选中Analyze-》Run Inspection by Name -》输入 Unused Resuroces
+以及Refactor->Remove Unused Resources
+快速删除无用的import包
+code->Optimize Imports...
+
 
 刚开始使用Android Studio时，在创建一个javabean时，很习惯的在JavaBean类中，右键去找生成get，set等选项。但是很遗憾，找不到。
 那这边如何快速的set，get或者生成构造函数，生成toString方法。
