@@ -152,7 +152,7 @@ Git的设置文件为.gitconfig，它可以在用户主目录下（全局配置�
 
 > $ git branch -D [branch-name]
 
-* 变基操作
+* 变基操作（这命令会把你的当前分支里的每个提交(commit)取消掉，并且把它们临时保存为补丁(patch)(这些补丁放到".git/rebase"目录中),然后把当前分支更新 为最新的"origin"分支，最后把保存的这些补丁应用到当前分支上。在rebase的过程中，也许会出现冲突(conflict). 在这种情况，Git会停止rebase并会让你去解决 冲突；在解决完冲突后$ git rebase --continue，这样git会继续应用(apply)余下的补丁。在任何时候，你可以用--abort参数来终止rebase的行动，并且当前分支会回到rebase开始前的状态。）
 
 > $ git rebase 目标分支
 
@@ -309,6 +309,8 @@ Git的设置文件为.gitconfig，它可以在用户主目录下（全局配置�
 * 恢复暂存区的所有文件到工作区
 
 > $ git checkout .
+
+# 注意：记住git reset不会产生commits,它本身做的事情就是重置HEAD(当前分支的版本顶端）到另外一个commit。--mixed是reset的默认参数，它将重置HEAD到另外一个commit,并且重置暂存区以便和HEAD相匹配，但工作区不变；--soft参数告诉Git重置HEAD到另外一个commit，但暂存区与工作区都不变；--hard参数将重置HEAD返回到另外一个commit，同时重置暂存区与工作区，三者保持一致，这很容易丢失数据。
 
 * 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变
 
