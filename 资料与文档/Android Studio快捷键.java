@@ -23,7 +23,9 @@ Ctrl＋Shift＋Backspace 可以跳转到上次编辑的地方
 
 Ctrl+Alt+Left/Right:返回至上次浏览的位置
 
-Ctrl＋E，可以显示最近编辑的文件列表
+Ctrl＋E，可以显示最近打开的文件列表
+
+Ctrl+Shift+E:可以显示最近修改的文件列表
 
 Ctrl+R:替换文本
 
@@ -39,8 +41,6 @@ Ctrl+/:注释代码 格式：//代码块
 Ctrl+Shift+/:注释多行代码 格式:/*代码块*/
 
 Ctrl+Shift+Alt+N:查找类中的方法和变量
-
-Ctrl+Shift+C:对比最近修改的代码
 
 Ctrl+[或]：可以调到大括号的开头结尾
 
@@ -124,3 +124,13 @@ ctrl+q   打开帮助文档
 手动加入v7包:鼠标放在工程目录右键-OpenModuleSetting-Dependenices点击加号
 
 Ctrl - Shift -F8 查看所有打断点的地方
+
+alt + shift + 鼠标点击  可添加一个编辑光标. 最后如果不需要那么就esc即可关闭多余光标.
+  
+ctrl + shift + enter 快速补全完成（方法体大括号的添加，行尾分号的添加，自动格式化改行操作等）
+
+ctrl + shift + v  展示最近几次的复制内容
+
+
+
+
