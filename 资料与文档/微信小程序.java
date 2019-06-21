@@ -1,12 +1,6 @@
 http://192.25.103.82:8888/svn/networkdevsvn/999_TEMP/ENO/iIndustrial_v2.5/
 http://192.25.103.82:8888/svn/networkdevsvn/999_TEMP/ENO/client_android_as/
-肖卫华 xiaoweihua Android
-江伟鸿 jiangweihong Android
-徐孟方 xumengfang Android
-付湿 fushi ios
-滑建威 huajianwei ios
-密码666666
-平台的同事就不用svn权限了
+
 
 
 微信小程序：
